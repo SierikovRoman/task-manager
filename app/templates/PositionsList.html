@@ -1,0 +1,40 @@
+<!-- POSITIONS_TABLE -->
+<div class="panel panel-default" id="positionList">
+  <div class="panel-heading"><h5>POSITIONS</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Search Position Into Database..." ng-model="search_query">
+      </span>
+    </div>
+  <div class="table-container positionTable">
+      <!-- Table -->
+      <table class="table table-hover">
+        <tr>
+        <th class="hide">ID</th>
+        <th>Position</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </tr>
+          <tr ng-repeat="position in posCount | filter:search_query">
+            <td class="hide"><span>{{position.id}}</span></td>
+            <td>{{position.pos_name}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <button class="btn btn-warning" ng-click="editPosition(position)" title="Edit">
+              <span class="glyphicon glyphicon-edit"></span></button>
+            </td>
+            <td>
+              <button class="btn btn-danger" ng-click="deletePosition(position)" title="Delete">
+              <span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+          </tr>
+        </table>
+      </div>
+  </div>

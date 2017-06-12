@@ -1,0 +1,88 @@
+$header-color: #5B3A29;
+$bg-color: #FF4510;
+$a: #fff;
+$b: #111;
+$over: 0!important;
+
+.navbar, .logOn, .btn, a{
+	outline: $over;
+}
+
+#name_sys{
+	color: $a;
+}
+
+.hr{
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 10px;
+}
+
+.mh{
+	background: #eee;
+	border-radius: 5px 5px 0 0;
+}
+
+.navbar{
+	height: auto;
+}
+
+.navbar-bottom{
+	width: auto;
+}
+
+.c_main{
+	padding: 0;
+	height: auto;
+}
+
+#errors{
+	color: red;
+}
+
+form{
+	margin: 0 auto; 
+	margin: 100px 0 100px 0;
+	padding: 30px;
+	background-color: #eee;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer{
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-top: 20px;
+}
+
+.media-links{
+	//background-color: $a;
+	//outline: 1px solid red;
+	text-align: center;
+	//margin: -5px;
+}
+
+#icon{
+	height: 40%;
+	width: 40%;
+}
+
+.navbar-fixed-bottom{
+	background-color: $b;
+	height: 50px;	
+}
+
+//--- Media ---//
+
+@media screen and (max-width: 770px) {
+
+.navbar-fixed-bottom{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.navbar-text{
+	text-align: center;
+}
+
+}

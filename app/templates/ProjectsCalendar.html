@@ -1,0 +1,91 @@
+<!-- Task_Calendar -->
+<!-- <div class="calendar">
+  <div class="row">
+      <div class="col-md-12"> -->
+        <div id='calendar'></div>
+        <div id="dialog" title="My dialog" style="display:none"></div>
+<!--   </div>
+</div>  -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="title"></h4>
+      </div>
+      <div class="modal-body">
+        <form>
+            <fieldset>
+                <div class="row">
+                    <div class="col-xs-6" align="left">
+                        <label for="start_date">Start date</label>
+                        <p  id="start_date"></p>
+                    </div>
+                    <div class="col-xs-6" align="left">
+                        <label for="end_date">End date</label>
+                        <p id="end_date"></p>
+                    </div>
+                </div>
+
+                <label for="description">Model</label>
+                <h6 id="model"></h6>
+
+                <label for="executor">Progress</label>
+                <h6 id="progress"></h6>
+
+                <label for="executor">Executor</label>
+                <h6 id="executor"></h6>
+
+            </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+    $(document).ready(function(){
+        // $("#start_date").mask('00/00/0000');
+        // $("#end_date").mask('00/00/0000');
+    });
+        
+$('#calendar').fullCalendar({
+     events: '../../Project_Manager/php/projectInfoCalendar.php',
+     error: function() 
+            {
+                alert("error");
+            },
+            success: function()
+            {
+                console.log("successfully loaded");
+            },
+    color: 'blue',    
+    textColor: 'yellow',
+    utc: true,
+    editable: true,
+    timezone: 'local',
+    header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+    },
+    eventClick: function (calEvent, jsEvent, view) {
+
+        $("#myModal").modal('show');
+
+        $("#title").text(calEvent.title);
+        $("#start_date").text(calEvent.start);
+        $("#end_date").text(calEvent.end);
+        $("#progress").text(calEvent.progress + "%");
+        $("#model").text(calEvent.model);
+        $("#executor").text(calEvent.name + " " + calEvent.surname);
+
+        
+    }
+});
+
+
+</script>

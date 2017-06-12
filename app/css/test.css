@@ -1,0 +1,147 @@
+@charset "UTF-8";
+body {
+  overflow: auto;
+  /* добавить полосу прокрутки */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: 0 !important;
+  color: #e2edff;
+}
+
+#nocolor {
+  color: #3399ff;
+}
+
+select, .btn {
+  outline: 0 !important;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -35px;
+}
+
+.block-left {
+  background-color: #495568;
+  height: 100vh;
+  padding: 25px !important;
+}
+
+.block-right {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.navbar {
+  -webkit-border-radius: 0 0 5px 5px !important;
+          border-radius: 0 0 5px 5px !important;
+}
+
+.userPhoto {
+  width: auto;
+  height: auto;
+  margin-bottom: 3vh;
+}
+
+.links {
+  padding-left: 20px;
+}
+
+.main-container {
+  padding: 1.5vh;
+}
+
+.for_all_forms {
+  padding: 10px;
+}
+
+.advice {
+  color: #777a7f;
+}
+
+.memberTable {
+  max-height: 550px;
+  overflow: auto;
+}
+
+.memberTable_2 {
+  height: 540px;
+  overflow: auto;
+}
+
+.positionTable {
+  max-height: 550px;
+  overflow: auto;
+}
+
+.projectsTable {
+  max-height: 550px;
+  overflow: auto;
+}
+
+.projectStagesTable {
+  max-height: 250px;
+  overflow: auto;
+}
+
+.modelTable {
+  height: 250px;
+  overflow: auto;
+}
+
+.stagesTable {
+  max-height: 250px;
+  overflow: auto;
+}
+
+.taskTable {
+  max-height: 550px;
+  overflow: auto;
+}
+
+#calendar {
+  width: 100%;
+}
+
+.calendar {
+  padding: 0;
+  margin: 0;
+  height: 400px !important;
+}
+
+.navchik {
+  background-color: #eee;
+}
+
+tr:hover {
+  background-color: #eee;
+}
+
+th {
+  width: 130px;
+}
+
+#memberForm {
+  margin: 10px;
+}
+
+.mobile_members {
+  display: none !important;
+}
+
+.mobile_projects {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile_members {
+    display: block !important;
+  }
+  .mobile_projects {
+    display: block !important;
+  }
+}

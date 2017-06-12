@@ -1,0 +1,67 @@
+<div class="stagesTask">
+  <div>
+    <form name="taskList" ng-submit="showStageTasks(projectTask);" method="POST">
+      <div class="form-group" > 
+        <label for="Progect Manager">Stage</label>
+
+        </br>
+
+        <select ng-model="projectTask.stages_id">
+          <option value="">--Select Stage--</option>
+          <option ng-repeat="st_count in stageCount" value="{{st_count.id}}"> {{st_count.name}} </option>
+        </select>
+
+      </div>
+        <button class="btn btn-primary" ng-disabled="taskList.$invalid">SHOW</button>
+      </form>
+  </div>
+
+  </br>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><h5>Project Tasks by stages<h5></div>
+      <div class="panel-body">
+        <span class="input-group-btn">
+          <input type="text" class="form-control" placeholder="Search tasks Into Database..." ng-model="search_query">
+        </span>
+      </div>
+    <div class="table-container taskTable">
+        <table class="table table-hover">
+          <tr>
+          <th class="">ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Executor</th>
+          <th>Stage</th>  
+          <th>Status</th>  
+          <th>Edit</th>
+          <th>Delete</th>
+          </tr>
+            <tr ng-repeat="task in tasks_name | filter:search_query">
+              <td class=""><span>{{task.id}}</span></td>
+              <td>{{task.title}}</td>
+              <td>{{task.description}}</td>
+              <td>{{task.start_dt}}</td>     
+              <td>{{task.end_dt}}</td> 
+              <td>{{task.member_name}}</td>
+              <td>{{task.stage_name}}</td>
+              <td>{{task.is_done}}</td> 
+              <td>
+                <button class="btn btn-warning" ng-click="editInfoTask(task)" title="Edit">
+                <span class="glyphicon glyphicon-edit"></span></button>
+              </td>
+              <td>
+                <button class="btn btn-danger" ng-click="deleteInfoTask(task)" title="Delete">
+                <span class="glyphicon glyphicon-trash"></span></button>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+<div>
+
+
+
+

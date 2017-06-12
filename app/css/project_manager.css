@@ -1,0 +1,91 @@
+.navbar, .logOn, .btn, a {
+  outline: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+#name_sys {
+  color: #fff;
+}
+
+select {
+  outline: 0 !important;
+}
+
+.cf {
+  padding: 0;
+}
+
+.main {
+  margin-top: 55px;
+  height: auto;
+  padding: 0;
+  float: left;
+}
+
+.cnt {
+  float: right;
+}
+
+.pr {
+  width: 200px;
+}
+
+table {
+  border: none;
+}
+
+.panel-body-sprint {
+  padding: 0;
+}
+
+.sprint-heading {
+  background-color: #337ab7 !important;
+  color: #fff !important;
+}
+
+.task-heading {
+  background-color: #d9edf7 !important;
+  color: #337ab7 !important;
+}
+
+.panel-task {
+  background-color: #f5f5f5;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
+  border-style: 1px solid transparent;
+  border-color: #ddd;
+}
+
+#div1 {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #eee;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.cns {
+  float: left;
+}
+
+.navbar-fixed-bottom {
+  background-color: #111;
+  height: 50px;
+}
+
+@media screen and (max-width: 770px) {
+  .navbar-fixed-bottom {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-text {
+    text-align: center;
+  }
+  .pr {
+    width: 200px;
+  }
+}

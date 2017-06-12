@@ -1,0 +1,47 @@
+<!-- Members_Table -->
+<div class="panel panel-default" id="projectList">
+  <div class="panel-heading"><h5 class="en hide">MY PROJECT</h5><h5 class="ukr">Проекти</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Пошук деталей проекту..." ng-model="search_query"><!-- Search Projects Into Database...-->
+      </span>
+    </div>
+  <div class="table-container projectsTable">
+      <table class="table table-hover">
+        <tr>
+          <th class="hide">ID</th>
+          <th class="en hide">Title</th>           <th class="ukr">Назва проекту</th>
+          <th class="en hide">Start Date</th>      <th class="ukr">Початок</th>
+          <th class="en hide">End Date</th>        <th class="ukr">Кінець</th>
+          <th class="en hide">Progress</th>        <th class="ukr">Прогрес</th>
+          <th class="en hide">Project Manager</th> <th class="ukr">Керівник проекту</th>
+          <th class="en hide">Model</th>           <th class="ukr">Модель</th>
+          <th class="en hide">Edit</th>            <th class="ukr">Редагувати</th>
+          <th class="en hide">Delete</th>          <th class="ukr">Видалити</th>
+        </tr>
+          <tr ng-repeat="project in projects | filter:search_query">
+            <td class="hide"><span>{{project.id}}</span></td>
+            <td>{{project.title}}</td>
+            <td>{{project.start_dt}}</td>     
+            <td>{{project.end_dt}}</td>
+            <td>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                  {{project.progress}}
+                </div>
+              </div>
+            </td>
+            <td>{{project.member_name}} {{project.member_surname}}</td>
+            <td>{{project.model_name}}</td>
+            <td>
+              <button class="btn btn-warning" ng-click="editInfoProject(project)" title="Edit">
+              <span class="glyphicon glyphicon-edit"></span></button>
+            </td>
+            <td>
+              <button class="btn btn-danger" ng-click="deleteInfoProject(project)" title="Delete">
+              <span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+          </tr>
+        </table>
+      </div>
+  </div>

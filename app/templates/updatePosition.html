@@ -1,0 +1,33 @@
+<!-- UPDATE_POSITION-->
+<div class="panel panel-default" id="UpdatePosition" hidden>
+  <div class="panel-heading"><span style="font-weight: bold;">Update position</span>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="updatePositionBack()"><span aria-hidden="true">&times;</span></button>
+  </div>
+        <form name="positionList" class="for_all_forms" ng-submit="UpdatePosition(currentPosition);" method="POST">
+
+          <div class="form-group">
+              <label for="Position">Position:</label>
+              <input type="text"
+                     name="positionName"
+                     id="positionName"
+                     class="form-control"
+                     placeholder="IOS Developer Junior"
+                     ng-model="currentPosition.pos_name" 
+                     value="{{currentPosition.pos_name}}"
+                     required />
+            </div>
+
+          <!-- ERRORS_NAME_POSITION -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="positionList.positionName.$invalid && positionList.positionName.$dirty">Position field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_NAME_POSITION -->
+
+
+          <div class="modal-footer form-group">
+            <p align="left" class="advice"><em>To update info about position, please fill in all fields.</em></p>
+            <button class="btn btn-primary" ng-disabled="positionList.$invalid" ng-click="setUpdatePosition(currentPosition.id)">Update</button> 
+          </div>
+        </form>
+      </div>
+    </div>

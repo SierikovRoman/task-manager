@@ -1,0 +1,81 @@
+<!-- UPDATE_MY_TASK-->
+<div class="panel panel-default" id="updateMyTask" hidden>
+  <div class="panel-heading"><span class="en hide" style="font-weight: bold;">Update task</span><span class="ukr" style="font-weight: bold;">ОНОВИТИ ЗАВДАННЯ</span>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="updateMyTaskBack()"><span aria-hidden="true">&times;</span></button>
+  </div>
+        <form name="taskList" class="for_all_forms" ng-submit="UpdateTask(currentTask);" method="POST">
+
+          <div class="form-group">
+              <label class="en hide" for="Description">Description</label>
+              <label class="ukr" for="Description">Опис завдання</label>
+              <input type="text" 
+                     name="taskDescription"
+                     class="form-control"
+                     placeholder="Some text"
+                     ng-model="currentTask.description"
+                     value="{{currentTask.description}}" 
+                     required />
+            </div>
+
+          <!-- ERRORS_DESCRIPTION -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskDescription.$invalid && taskList.taskDescription.$dirty">Поле опису завдання пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_ERRORS_DESCRIPTION Dedcription field is Empty! -->
+
+            <div class="form-group">
+            <label class="en hide" for="DateRange">Date range</label><label class="ukr" for="DateRange">Часовий проміжок</label>
+            <div class="input-group input-daterange">
+              <input type="text" 
+                     name="taskStartDate"
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="currentTask.start_dt"
+                     value="{{currentTask.start_dt}}"
+                     readonly />
+                <div class="input-group-addon en hide">to</div>
+                <div class="input-group-addon ukr">до</div>
+              <input type="text"
+                     name="taskEndDate" 
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="currentTask.end_dt"
+                     value="{{currentTask.end_dt}}"
+                     readonly />
+                </div>
+          </div>
+
+
+          <div class="form-group" > 
+            <label class="en hide" for="Progect Manager">Is done:</label><label class="ukr" for="Progect Manager">Статус:</label>
+            </br>
+            <input type="checkbox" name="taskStatus" ng-model="currentTask.status" ng-false-value="0" required>
+
+          </div>
+
+
+          <!-- ERRORS_STATUS -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskStatus.$invalid && taskList.taskStatus.$dirty">Поле статусу завдання пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_ERRORS_STATUS Status field is Empty! -->
+
+
+          <div class="modal-footer form-group">
+            <p align="left" class="advice en hide"><em>To update info about task, please fill in field and check checkbox.</em></p>
+            <p align="left" class="advice ukr"><em>Щоб онововити завдання, будь-ласка, виберіть чекбокс.</em></p>
+            <button class="btn btn-primary en hide" ng-disabled="taskList.$invalid" ng-click="setUpdateTask(currentTask.id)">Update</button>
+            <button class="btn btn-primary ukr" ng-disabled="taskList.$invalid" ng-click="setUpdateTask(currentTask.id)">Оновити</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+

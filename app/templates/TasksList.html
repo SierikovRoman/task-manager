@@ -1,0 +1,50 @@
+<!-- TASKS_TABLE -->
+<div class="panel panel-default" id="tasksList">
+  <div class="panel-heading"><h5 class="en hide">Project Tasks</h5><h5 class="ukr">ЗАВДАННЯ ПРОЕТКУ</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Пошук завдань..." ng-model="search_query">
+      </span>
+    </div>
+  <div class="table-container taskTable">
+    <table class="table table-hover">
+      <tr>
+        <th class="hide">ID</th>
+        <th class="en hide">Title</th>       <th class="ukr">Назва завдання</th>
+        <th class="en hide">Description</th> <th class="ukr">Опис завдання</th>
+        <th class="en hide">Start Date</th>  <th class="ukr">Початок</th>
+        <th class="en hide">End Date</th>    <th class="ukr">Кінець</th>
+        <th class="en hide">Executor</th>    <th class="ukr">Виконавець</th>  
+        <th class="en hide">Status</th>      <th class="ukr">Статус</th> 
+        <th class="hide">Project Id</th>
+        <th class="en hide">Stage</th>       <th class="ukr">Етап</th>  
+        <th class="en hide">Edit</th>        <th class="ukr">Редагувати</th>
+        <th class="en hide">Delete</th>      <th class="ukr">Видалити</th>
+      </tr>
+        <tr ng-repeat="task in tasks | filter:search_query">
+          <td class="hide"><span>{{task.id}}</span></td>
+          <td>{{task.title}}</td>
+          <td>{{task.description}}</td>
+          <td>{{task.start_dt}}</td>     
+          <td>{{task.end_dt}}</td> 
+          <td>{{task.member_name}} {{task.member_surname}}</td> 
+          <td>{{task.is_done}}</td> 
+          <td class="hide">{{task.project_id}}</td> 
+          <td>{{task.stage_name}}</td> 
+          <td>
+            <button class="btn btn-warning" ng-click="editInfoTask(task)" title="Edit">
+            <span class="glyphicon glyphicon-edit"></span></button>
+          </td>
+          <td>
+            <button class="btn btn-danger" ng-click="deleteInfoTask(task)" title="Delete">
+            <span class="glyphicon glyphicon-trash"></span></button>
+          </td>
+        </tr>
+      </table>
+  </div>
+</div>
+
+
+
+
+

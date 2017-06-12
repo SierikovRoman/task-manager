@@ -1,0 +1,150 @@
+<!-- ADD_NEW_TASK-->
+<div class="panel panel-default" >
+  <div class="panel-heading"><h5>Add new task</h5></div>
+        <form name="taskList" class="for_all_forms" ng-submit="insertNewTask(projectTask);" method="POST">
+
+          <div class="form-group">
+              <label for="Title">Title</label>
+              <input type="text"
+                     name="taskTitle"
+                     class="form-control"
+                     placeholder="IOS Application"
+                     ng-model="projectTask.title" 
+                     required />
+            </div>
+
+          <!-- ERRORS_TITLE -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskTitle.$invalid && taskList.taskTitle.$dirty">Title field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_TITLE -->
+
+          <div class="form-group">
+              <label for="Description">Description</label>
+              <input type="text" 
+                     name="taskDescription"
+                     class="form-control"
+                     placeholder="Some text"
+                     ng-model="projectTask.description" 
+                     required />
+            </div>
+
+          <!-- ERRORS_DESCRIPTION -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskDescription.$invalid && taskList.taskDescription.$dirty">Dedcription field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_DESCRIPTION -->
+
+          <div class="form-group">
+            <label for="DateRange">Date range</label>
+            <div class="input-group input-daterange">
+              <input type="text" 
+                     name="taskStartDate"
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="projectTask.start_dt"
+                     required />
+                <div class="input-group-addon">to</div>
+              <input type="text"
+                     name="taskEndDate" 
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="projectTask.end_dt"
+                     required />
+                </div>
+          </div>
+
+          <!-- ERRORS_START_DATE -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskStartDate.$invalid && taskList.taskStartDate.$dirty">Start Date field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_START_DATE -->
+
+          <!-- ERRORS_END_DATE -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskEndDate.$invalid && taskList.taskEndDate.$dirty">End Date field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_END_DATE -->
+
+          <div class="form-group" >
+            <label for="Progect Manager">Executor</label>
+
+            </br>
+
+            <select ng-model="projectTask.executor_id" name="taskExecutor" required>
+              <option value="">--Select Executor--</option>
+              <option ng-repeat="m_count in memberCount" value="{{m_count.id}}">{{m_count.name}} {{m_count.surname}}</option>
+            </select>
+
+          </div>
+
+
+          <!-- ERRORS_EXECUTOR -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskExecutor.$invalid && taskList.taskExecutor.$dirty">Executor field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_EXECUTOR -->
+
+          <div class="form-group" > 
+            <label for="Progect Manager">Stage</label>
+
+            </br>
+
+            <select ng-model="projectTask.stage_id" name="taskStage" required>
+              <option value="">--Select stage--</option>
+              <option ng-repeat="st_count in stageCount" value="{{st_count.id}}">{{st_count.name}}</option>
+            </select>
+
+          </div>
+
+
+          <!-- ERRORS_STAGE -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskStage.$invalid && taskList.taskStage.$dirty">Stage field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_STAGE -->
+
+          <div class="form-group" > 
+            <label for="Progect Manager">Is done:</label>
+
+            <input type="checkbox" name="taskStatus" ng-model="projectTask.status" ng-false-value="0">
+
+          </div>
+
+
+          <!-- ERRORS_STATUS -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="taskList.taskStatus.$invalid && taskList.taskStatus.$dirty">Status field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_STATUS -->
+
+
+          <div class="modal-footer form-group">
+            <button class="btn btn-primary" ng-disabled="taskList.$invalid" onclick="new_stage_task()">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+<div class="modal fade bs-example-modal-md" id="new_stage_task" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <img src="../../Project_Manager/images/success.png" alt="success" height="50px" width="50px">
+        <h4>New task successfully added</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="projectTask = null">Okey</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

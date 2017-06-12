@@ -1,0 +1,69 @@
+<div class="myStages">
+  <div>
+    <form ng-submit="showStage(myModel);" method="POST">
+
+    <div class="form-group" > 
+      <label class="en hide" for="Model">Model:</label>
+      <label class="ukr" for="Model">Назва моделі:</label>
+
+      </br>
+
+      <select ng-model="myModel.model_id">
+        <option class="en hide" value="">--Select model--</option>
+        <option class="ukr" value="">--Оберіть модель--</option>
+        <option ng-repeat="my_model in models" value="{{my_model.id}}"> {{my_model.name}} </option>
+      </select>
+
+    </div>
+
+      <button class="btn btn-primary en hide" ng-disabled="myModels.$invalid">SHOW</button>
+      <button class="btn btn-primary ukr" ng-disabled="myModels.$invalid">Показати</button>
+
+    </form>
+  </div>
+
+</br>
+</br>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h5 class="en hide">Model's stages</h5><h5 class="ukr">Етапи</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Пошук етапів..." ng-model="search_stage_query">
+      </span>
+    </div>
+    <div class="table-container stagesTable">
+        <table class="table table-hover">
+          <tr>
+          <th class="hide">ID</th>
+          <th class="en hide">Name</th>        <th class="ukr">Назва етапу</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th class="en hide">Edit</th>        <th class="ukr">Редагувати</th>
+          <th class="en hide">Delete</th>      <th class="ukr">Видалити</th>
+          </tr>
+            <tr ng-repeat="stage in My_Stages | filter:search_stage_query">
+              <td class="hide"><span>{{stage.id}}</span></td>
+              <td>{{stage.name}}</td> 
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <button class="btn btn-warning" ng-click="editStage(stage)" title="Edit">
+                <span class="glyphicon glyphicon-edit"></span></button>
+              </td>
+              <td>
+                <button class="btn btn-danger" ng-click="deleteStage(stage)" title="Delete">
+                <span class="glyphicon glyphicon-trash"></span></button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+<div>
+
+
+
+
+

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-inverse navbar-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse" aria-expanded="false"> <!-- make menu for mobile version -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="name_sys">Project Management</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+		      <a href="#" class="logOn" data-toggle="modal" data-target="#logOut"">EMPLOYEE</a>
+    		</li>
+        <li class="mobile_projects">
+          <a href="#/MemberList" ng-click="updateMembers()"> MEMBERS </a> <!-- ng-click="membersList()" -->
+        </li>
+        <li class="mobile_projects">
+          <a href="#/Projects" ng-click="updateProjects()"> MY PROJECT </a>
+        </li>
+        <li class="mobile_projects">
+          <a href="#/AllTasks" ng-click="updateTasks()"> ALL TASKS </a>
+        </li>
+        <li class="mobile_projects">
+          <a href="#/StagesTasks" ng-click="updateTasks()"> MY TASKS </a>
+        </li>
+        <li class="mobile_projects">
+          <a href="#/TaskCalendar"> TASK CALENDAR </a>
+        </li>
+        <li class="mobile_projects">
+          <a href="#/MakeReport"> MAKE REPORT ?</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

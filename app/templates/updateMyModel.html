@@ -1,0 +1,36 @@
+<!-- UPDATE_MY_MODEL-->
+<div class="panel panel-default" id="updateModel" hidden>
+  <div class="panel-heading"><span class="en hide" style="font-weight: bold;">Update model</span><span class="ukr" style="font-weight: bold;">Оновлення моделі</span>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="updateModelBack()"><span aria-hidden="true">&times;</span></button>
+  </div>
+        <form name="modelList" class="for_all_forms" ng-submit="updateMyModel(currentModel);" method="POST">
+
+          <div class="form-group">
+              <label class="en hide" for="Model">Model name:</label>
+              <label class="ukr" for="Model">Назва моделі:</label>
+              <input type="text"
+                     name="modelName"
+                     class="form-control"
+                     placeholder="Single"
+                     ng-model="currentModel.name" 
+                     value="{{currentModel.name}}"
+                     required />
+            </div>
+
+          <!-- ERRORS_MODEL_NAME-->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="modelList.modelName.$invalid && modelList.modelName.$dirty">Model Name field is Empty!</p>
+            <p class="text-danger ukr" ng-show="modelList.modelName.$invalid && modelList.modelName.$dirty">Поле назва моделі пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_ERRORS_MODEL_NAME -->
+
+
+          <div class="modal-footer form-group">
+            <p align="left" class="advice en hide"><em>To update model, please fill in field.</em></p>
+            <p align="left" class="advice ukr"><em>Щоб онововити модель, будь-ласка, заповніть поле.</em></p>
+            <button class="btn btn-primary en hide" ng-disabled="modelList.$invalid" ng-click="setUpdateMyModel(currentModel.id)">Update</button> 
+            <button class="btn btn-primary ukr" ng-disabled="modelList.$invalid" ng-click="setUpdateMyModel(currentModel.id)">Оновити</button> 
+          </div>
+        </form>
+      </div>
+    </div>

@@ -1,0 +1,133 @@
+$header-color: #5B3A29;
+$bg-color: #FF4510;
+$a: #fff;
+$b: #111;
+$over: 0!important;
+$i: !important;
+
+.navbar, .logOn, .btn, a{
+	outline: $over;
+}
+
+a {
+	text-decoration: none;
+}
+
+#name_sys{
+	color: $a;
+}
+
+select{
+	outline: $over;
+}
+
+.cf{
+	padding: 0;
+}
+
+.main{
+	margin-top: 55px;
+	height: auto;
+	padding: 0;
+	float: left;
+}
+
+.cnt{
+	float: right;
+}
+
+.pr{
+	width: 200px;
+}
+
+table{
+	border: none;
+}
+
+.panel-body-sprint {
+	padding: 0;
+}
+
+.sprint-heading {
+	background-color: #337ab7 $i;
+	color: #fff $i;
+}
+
+.task-heading {
+	background-color: #d9edf7 $i;
+	color: #337ab7 $i;
+	border-bottom: 1px solid #337ab7 $i;
+}
+
+.panel-task{
+	background-color: #f5f5f5;
+	border-radius: 0 $i;
+	border-style: 1px solid transparent;
+	border-color: #ddd;
+}
+
+.upstat{
+	float: right;
+	margin: 15px 15px 0px 0px;
+}
+
+.time_query{
+	font-weight: 300;
+	color: red;
+}
+
+.req{
+	width: 100% $i;
+}
+
+.reqlabel{
+	width: 120px $i;
+	padding: 0 $i;
+}
+
+#reguest_btn{
+	float: right;
+	margin: 50px 15px 10px 0px;
+}
+
+.sprint-info{
+	padding: 5px;
+}
+
+#div1 {
+	width: 100%;
+	height: auto;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+//------ Create new Sprint ------//
+
+.cns{
+	float: left;
+}
+
+.navbar-fixed-bottom{
+	background-color: $b;
+	height: 50px;	
+}
+
+//--- Media ---//
+
+@media screen and (max-width: 770px) {
+
+.navbar-fixed-bottom{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.navbar-text{
+	text-align: center;
+}
+
+.pr{
+	width: 200px;
+}
+
+}

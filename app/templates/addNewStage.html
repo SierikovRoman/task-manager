@@ -1,0 +1,71 @@
+<div class="panel panel-default" >
+  <div class="panel-heading"><h5 class="en hide">Add new stage</h5><h5 class="ukr">НОВИЙ ЕТАП</h5></div>
+  <form name="Stage" class="for_all_forms" ng-submit="insertNewStage(stage);" method="POST">
+    <div class="form-group" > 
+      <label class="en hide" for="model">Model:</label>
+      <label class="ukr" for="model">Модель:</label>
+
+      </br>
+
+      <select ng-model="stage.model_id" name="mymodel" id="mymodel" required>
+        <option class="en hide" value="">--Select model--</option>
+        <option class="ukr" value="">--Оберіть модель--</option>
+        <option ng-repeat="md_count in models" value="{{md_count.id}}">{{md_count.name}}</option>
+      </select>
+
+    </div>
+
+    <!-- ERRORS_STAGE -->
+    <div class="form-group">
+      <p class="text-danger en hide" ng-show="Stage.mymodel.$invalid && Stage.mymodel.$dirty">Model field is Empty!</p>
+      <p class="text-danger ukr" ng-show="Stage.mymodel.$invalid && Stage.mymodel.$dirty">Модель не обрано! Будь-ласка, оберіть модель!</p>
+    </div>
+    <!-- END_ERRORS_STAGE -->
+
+    <div class="form-group">
+      <label class="en hide" for="Name">Stage name</label>
+      <label class="ukr" for="Name">Stage name</label>
+      <input type="text"
+             name="stageName"
+             id="stageName" 
+             class="form-control"
+             placeholder="Single"
+             ng-model="stage.name" 
+             required />
+    </div>
+
+    <!-- ERRORS_TITLE -->
+    <div class="form-group">
+      <p class="text-danger en hide" ng-show="Stage.stagelName.$invalid && Stage.stageName.$dirty">Stage name is Empty!</p>
+      <p class="text-danger ukr" ng-show="Stage.stagelName.$invalid && Stage.stageName.$dirty">Поле назва етапу пусте! Будь-ласка, заповніть поле!</p>
+    </div>
+    <!-- END_ERRORS_TITLE -->
+
+    <div class="modal-footer form-group">
+      <p align="left" class="advice en hide"><em>To add a new stage, please fill in field.</em></p>
+      <p align="left" class="advice ukr"><em>TЩоб додати новий етап, будь-ласка, заповніть поле ім'я етапу та оберіть модель.</em></p>
+      <button class="btn btn-primary en hide" ng-disabled="Stage.$invalid" onclick="new_stage()">Add</button>
+      <button class="btn btn-primary ukr" ng-disabled="Stage.$invalid" onclick="new_stage()">додати</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- SUCCESS_ADDED_NEW_STAGE -->
+
+<div class="modal fade bs-example-modal-md" id="new_stage" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <img src="../../Project_Manager/images/success.png" alt="success" height="50px" width="50px">
+        <h4 class="en hide">New stage successfully added</h4>
+        <h4 class="ukr">Новий етап успішно додано</h4>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default en hide" data-dismiss="modal" ng-click="stage = null">Okey</button>
+          <button type="button" class="btn btn-default ukr" data-dismiss="modal" ng-click="stage = null">Закрити</button>
+        </div>
+    </div>
+  </div>
+</div>

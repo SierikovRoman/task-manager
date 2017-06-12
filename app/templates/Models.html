@@ -1,0 +1,119 @@
+<!-- MODEL_TABLE -->
+<div class="panel panel-default" id="modelsList1">
+  <div class="panel-heading"><h5 class="en hide">ALL MODELS</h5><h5 class="ukr">ВСІ МОДЕЛІ</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Пошук моделей..." ng-model="search_query">
+      </span>
+    </div>
+	<div class="table-container modelTable">
+    <table class="table table-hover">
+      <tr>
+        <th class="hide">ID</th>
+        <th class="en hide">Name</th><th class="ukr">Назва моделі</th>
+      </tr>
+        <tr ng-repeat="models in modelCount | filter:search_query">
+          <td class="hide"><span>{{models.id}}</span></td>
+          <td data-toggle="modal" data-target="#myModal" ng-click="getMyModel(models)"><a href="" id="nocolor">{{models.name}}</a></td>
+        </tr>
+      </table>
+  </div>
+</div>
+
+
+<!-- MY_MODEL_TABLE -->
+<div class="panel panel-default" id="modelsList2">
+  <div class="panel-heading"><h5 class="en hide">MY MODELS</h5><h5 class="ukr">МОЇ МОДЕЛІ</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Пошук моделей..." ng-model="search_mymodel_query">
+      </span>
+    </div>
+    <div class="table-container modelTable">
+      <table class="table table-hover">
+        <tr>
+          <th class="hide">ID</th>
+          <th class="en hide">Name</th>        <th class="ukr">Назва моделі</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th class="en hide">Edit</th>        <th class="ukr">Редагувати</th>
+          <th class="en hide">Delete</th>      <th class="ukr">Видалити</th>
+        </tr>
+        <tr ng-repeat="mymodel in models | filter:search_mymodel_query">
+          <td class="hide"><span>{{mymodel.id}}</span></td>
+          <td>{{mymodel.name}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="">
+            <button class="btn btn-warning" ng-click="editModel(mymodel)" title="Edit">
+            <span class="glyphicon glyphicon-edit"></span></button>
+          </td>
+          <td class="">
+            <button class="btn btn-danger" ng-click="deleteModel(mymodel)" title="Delete">
+            <span class="glyphicon glyphicon-trash"></span></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+
+<!-- STAGES MODAL -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">{{currentModel.name}}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="panel-heading"><span class="en hide" style="font-weight: bold;">STAGES</span><span class="ukr" style="font-weight: bold;">ЕТАПИ</span></div>
+            <div class="panel-body">
+              <span class="input-group-btn">
+                <input type="text" class="form-control" placeholder="Пошук етапу..." ng-model="search_stage_query">
+              </span>
+            </div>
+          <div class="table-container projectStagesTable">
+            <table class="table table-hover">
+              <tr>
+              <th class="hide">ID</th>
+              <th class="en hide">Stage name</th> <th class="ukr">Назва етапу</th>
+              </tr>
+                <tr ng-repeat="stages in myStages | filter:search_stage_query">
+                  <td class="hide"><span>{{stages.id}}</span></td>
+                  <td>{{stages.name}}</td>
+                </tr>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SUCCESS_DELETED_MY_MODEL -->
+
+<div class="modal fade bs-example-modal-md" id="del_model" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <img src="../../Project_Manager/images/success.png" alt="success" height="50px" width="50px">
+        <h4 class="en hide">Model successfully deleted</h4>
+        <h4 class="ukr">Модель успішно видалено</h4>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default en hide" data-dismiss="modal">Okey</button>
+          <button type="button" class="btn btn-default ukr" data-dismiss="modal">Закрити</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+

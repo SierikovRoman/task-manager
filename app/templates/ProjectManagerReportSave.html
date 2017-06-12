@@ -1,0 +1,87 @@
+	<div class="col-xs-12" align="center">
+		<div class="body" id="body">
+      <div ng-repeat="project in choosenProject">
+  			<h2 id="title">{{project.title}}</h2>
+        <div class="row">
+          <div class="col-xs-6" align="left">
+
+              <label style="display: inline;">Start date:</label>
+              <p style="display: inline;">{{project.start_dt}}</p>
+              </br>
+              <label style="display: inline;">End date:</label>
+              <p style="display: inline;">{{project.end_dt}}</p>
+              </br>
+              <label style="display: inline;">Model:</label>
+              <p style="display: inline;">{{project.model_name}}</p>
+              </br>
+              <label style="display: inline;">Progress:</label>
+              <p style="display: inline;">{{project.progress}}</p>
+              </br>
+              <label style="display: inline;">Project Manager:</label>
+              <p style="display: inline;">{{project.member_name}} {{project.member_surname}}</p>
+
+          </div>
+          </br>
+          </br>
+        <div class="col-xs-12">
+          <h3>Project Tasks</h3>
+        </div>
+        <div class="table-container">
+            <table class="table table-hover">
+              <tr>
+              <th class="hide">ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Executor</th>  
+              <th>Status</th>  
+              <th>Stage</th>  
+              </tr>
+                <tr ng-repeat="task in choosenTasks">
+                  <td class="hide"><span>{{task.id}}</span></td>
+                  <td>{{task.title}}</td>
+                  <td>{{task.description}}</td>
+                  <td>{{task.start_dt}}</td>     
+                  <td>{{task.end_dt}}</td> 
+                  <td>{{task.member_name}}</td> 
+                  <td>{{task.is_done}}</td> 
+                  <td>{{task.stage_name}}</td> 
+                </tr>
+            </table>
+          </div>
+          </br>
+          </br>
+          </br>
+          </br>
+          <div class="col-xs-6" align="left">
+            <label style="display: inline;">Date:</label>
+            <p style="display: inline;">{{local_date}}</p>
+          </div>
+          <div class="col-xs-6" align="right">
+            <label style="display: inline;">Project manager</label>
+            <p style="display: inline;">_________________</p>
+          </div>
+        </div>
+		  </div>
+	 </div>
+
+
+   <style>
+      
+      .body {
+        max-width: 210mm;   /* ширина */
+        max-height: 297mm; /* высота */
+        padding: 5mm;
+        box-shadow: 10px 10px 20px black; /* небольшая тень для объемности */
+        background-color: white;  /* цвет фона в блоке */
+        font-family:  "Times New Roman"; /* нужный шрифт */
+        font-size: 11pt;
+        line-height: 1.5
+      }
+
+      #save_button{
+        margin-top: 20px;
+      }
+
+    </style>

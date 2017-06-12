@@ -1,0 +1,26 @@
+{
+  "name": "slicker",
+  "version": "0.0.2",
+  "main": [
+    "index.js"
+  ],
+  "ignore": [
+    "node_modules",
+    "components",
+    "dist",
+    "example",
+    "test"
+  ],
+  "dependencies": {},
+  "homepage": "https://github.com/epitome-mvc/slicker",
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.2",
+    "commit": "1680f707c9242314b076edc09b83c45755cb0a97"
+  },
+  "_source": "https://github.com/epitome-mvc/slicker.git",
+  "_target": "^0.0.2",
+  "_originalSource": "slicker",
+  "_direct": true
+}

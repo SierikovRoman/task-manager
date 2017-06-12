@@ -1,0 +1,122 @@
+<div class="row">
+	<div class="col-xs-12" align="center">
+		<h3>REPORT</h3>
+	</div>
+	<div class="col-xs-12" align="left">
+    <form name="projectList" ng-submit="getProjectInfo(project);" method="POST">
+    		<div class="form-group" >
+          <label for="Progect">Project:</label>
+          </br>
+          <select ng-model="project.project_id" required>
+            <option value="">-- Select Project --</option>
+            <option ng-repeat="pr in projects" value="{{pr.id}}"> {{pr.title}} </option>
+          </select>
+
+        </div>
+      <button class="btn btn-primary" ng-disabled="projectList.$invalid">CHOOSE</button>
+      <a href="#/SaveReport"><button class="btn btn-primary"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> SAVE </button></a>
+    </form>
+	</div>
+
+	<div class="col-xs-12" align="center">
+		<div class="body" id="body">
+      <div ng-repeat="project in choosenProject">
+  			<h1 id="title">{{project.title}}</h1>
+        <div class="row">
+          <div class="col-xs-6" align="left">
+
+              <label style="display: inline;">Start date:</label>
+              <p style="display: inline;">{{project.start_dt}}</p>
+              </br>
+              <label style="display: inline;">End date:</label>
+              <p style="display: inline;">{{project.end_dt}}</p>
+              </br>
+              <label style="display: inline;">Model:</label>
+              <p style="display: inline;">{{project.model_name}}</p>
+              </br>
+              <label style="display: inline;">Progress:</label>
+              <p style="display: inline;">{{project.progress}}</p>
+              </br>
+              <label style="display: inline;">Project Manager:</label>
+              <p style="display: inline;">{{project.member_name}} {{project.member_surname}}</p>
+
+          </div>
+          </br>
+          </br>
+          <div class="col-xs-12">
+            <h3>Project Tasks</h3>
+          </div>
+        </div>
+        <div class="table-container">
+            <table class="table table-hover">
+              <tr>
+              <th class="hide">ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Executor</th>  
+              <th>Status</th>  
+              <th>Stage</th>  
+              </tr>
+                <tr ng-repeat="task in choosenTasks">
+                  <td class="hide"><span>{{task.id}}</span></td>
+                  <td>{{task.title}}</td>
+                  <td>{{task.description}}</td>
+                  <td>{{task.start_dt}}</td>     
+                  <td>{{task.end_dt}}</td> 
+                  <td>{{task.member_name}}</td> 
+                  <td>{{task.is_done}}</td> 
+                  <td>{{task.stage_name}}</td> 
+                </tr>
+            </table>
+          </div>
+          </br>
+          </br>
+          </br>
+          </br>
+          <div class="bottom">
+            <div class="col-xs-6" align="left">
+              <label style="display: inline;">Date:</label>
+              <p style="display: inline;">{{local_date}}</p>
+            </div>
+            <div class="col-xs-6" align="right">
+              <label style="display: inline;">Administrator</label>
+              <p style="display: inline;">_________________</p>
+            </div>
+          </div>
+        </div>
+		  </div>
+	 </div>
+
+
+   <style>
+      
+      .body {
+        max-width: 210mm;   /* ширина */
+        max-height: 297mm; /* высота */
+        padding: 5mm;
+        box-shadow: 10px 10px 20px black; /* небольшая тень для объемности */
+        background-color: white;  /* цвет фона в блоке */
+        font-family:  "Times New Roman"; /* нужный шрифт */
+        font-size: 11pt;
+        line-height: 1.5
+      }
+
+      #save_button{
+        margin-top: 20px;
+      }
+
+      .bottom{
+        margin-bottom: 20px;
+      }
+
+    </style>
+
+
+
+
+
+
+
+

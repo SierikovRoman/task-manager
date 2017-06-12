@@ -1,0 +1,120 @@
+$bg-color: #FF4510;
+$a: #fff;
+$b: #111;
+$over: 0!important;
+$i: !important;
+
+$color: #ffa; // Можешь сменить цвет выделения tr
+
+
+.navbar, .logOn, .btn, a{
+	outline: $over;
+}
+
+a {
+	text-decoration: none;
+}
+
+#name_sys{
+	color: $a;
+}
+
+select{
+	outline: $over;
+}
+
+.cf{
+	padding: 0;
+}
+
+.main{
+	margin-top: 55px;
+	height: auto;
+	padding: 0;
+	float: left;
+}
+
+.pr{
+	width: 200px;
+}
+
+.del{
+	float: left;
+}
+
+table{
+	border: none;
+}
+
+tr:hover {
+	background-color: $color;
+}
+
+#add_new_proj{
+	margin: 0 0 150px 0;
+}
+
+.panel-body-sprint {
+	padding: 0;
+}
+
+.sprint-heading {
+	background-color: #337ab7 $i;
+	color: #fff $i;
+}
+
+.task-heading {
+	background-color: #d9edf7 $i;
+	color: #337ab7 $i;
+}
+
+.panel-task{
+	background-color: #f5f5f5;
+	border-radius: 0 $i;
+	border-style: 1px solid transparent;
+	border-color: #ddd;
+}
+
+#div1 {
+	width: 100%;
+	height: auto;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.media-links{
+	//background-color: $a;
+	//outline: 1px solid red;
+	text-align: center;
+	//margin: -5px;
+}
+
+#icon{
+	height: 40%;
+	width: 40%;
+}
+
+.navbar-fixed-bottom{
+	background-color: $b;
+	height: 50px;	
+}
+
+//--- Media ---//
+
+@media screen and (max-width: 770px) {
+
+.navbar-fixed-bottom{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.navbar-text{
+	text-align: center;
+}
+
+.pr{
+	width: 200px;
+}
+
+}

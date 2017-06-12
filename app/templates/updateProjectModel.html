@@ -1,0 +1,111 @@
+<!-- UPDATE_PROJECT_MODEL-->
+<div class="panel panel-default" id="updateProjectModel" hidden>
+  <div class="panel-heading"><span class="en hide" style="font-weight: bold;">Update project</span><span class="ukr" style="font-weight: bold;">Оновити проект</span>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="updateProjectModelBack()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+      <form name="projectList" class="for_all_forms" ng-submit="UpdateProject(currentProject);" method="POST">
+
+          <div class="form-group">
+              <label class="en hide" for="Name">Title</label><label class="ukr" for="Name">Назва проекту</label>
+              <input type="text"
+                   name="projectName"
+                   class="form-control"
+                   placeholder="IOS Application"
+                   ng-model="currentProject.title"
+                   value="{{currentProject.title}}" 
+                   required />
+            </div>
+
+          <!-- ERRORS_NAME -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="projectList.projectName.$invalid && projectList.projectName.$dirty">Title field is Empty!</p>
+            <p class="text-danger ukr" ng-show="projectList.projectName.$invalid && projectList.projectName.$dirty">Поле назви проект пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_ERRORS_NAME -->
+
+          <div class="form-group">
+            <label class="en hide" for="DateRange">Date range</label><label class="ukr" for="DateRange">Часовий проміжок</label>
+            <div class="input-group input-daterange">
+              <input type="text" 
+                     name="projectStartDate"
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="currentProject.start_dt"
+                     value="{{currentProject.start_dt}}"
+                     required />
+                <div class="input-group-addon en hide">to</div><div class="input-group-addon ukr">до</div>
+              <input type="text"
+                     name="projectEndDate" 
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="currentProject.end_dt"
+                     value="{{currentProject.end_dt}}"
+                     required />
+                </div>
+          </div>
+
+          <!-- ERRORS_START_DATE -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="projectList.projectStartDate.$invalid && projectList.projectStartDate.$dirty">Start Date field is Empty!</p>
+            <p class="text-danger ukr" ng-show="projectList.projectStartDate.$invalid && projectList.projectStartDate.$dirty">Поле дати початку проекту пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_ERRORS_START_DATE -->
+
+
+          <!-- ERRORS_END_DATE -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="projectList.projectEndDate.$invalid && projectList.projectEndDate.$dirty">End Date field is Empty!</p>
+            <p class="text-danger ukr" ng-show="projectList.projectEndDate.$invalid && projectList.projectEndDate.$dirty">Поле кінцевої дати проекту пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_END_DATE -->
+
+          <div class="form-group" >
+            <label class="en hide" for="Progect Manager">Project Model</label><label class="ukr" for="Progect Manager">Модель проекту</label>
+
+            </br>
+
+            <select ng-model="currentProject.model_id" required>
+              <option class="en hide" value="">-- Select Model --</option>
+              <option class="ukr" value="">-- Оберіть модель --</option>
+              <option ng-repeat="model_count in modelCount" value="{{model_count.id}}"> {{model_count.name}} </option>
+            </select>
+            
+          </div>
+
+          <!-- ERRORS_PROGRESS -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="projectList.projectProjectManager.$invalid && projectList.projectProjectManager.$dirty">Model field is Empty!</p>
+            <p class="text-danger ukr" ng-show="projectList.projectProjectManager.$invalid && projectList.projectProjectManager.$dirty">Поле моделі проекту пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_ERRORS_PROGRESS -->
+
+          <div class="form-group" ng-repeat="project in projects">
+            <label class="en hide" for="Progress">Progress</label><label class="ukr" for="Progress">Progress</label>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                  {{project.progress}}
+                </div>
+              </div>
+          </div>
+
+
+          <div class="modal-footer form-group">
+            <p align="left" class="advice en hide"><em>To update info about project, please fill in all fields.</em></p>
+            <p align="left" class="advice ukr"><em>Щоб оновити проект, будь-ласка, заповніть всі поля!</em></p>
+            <button class="btn btn-primary en hide" ng-disabled="projectList.$invalid" ng-click="setUpdateProject(currentProject.id)">Update</button> 
+            <button class="btn btn-primary ukr" ng-disabled="projectList.$invalid" ng-click="setUpdateProject(currentProject.id)">Оновити</button> 
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+

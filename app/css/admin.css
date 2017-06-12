@@ -1,0 +1,104 @@
+.navbar, .logOn, .btn, a {
+  outline: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+#name_sys {
+  color: #fff;
+}
+
+select {
+  outline: 0 !important;
+}
+
+.cf {
+  padding: 0;
+}
+
+.main {
+  margin-top: 55px;
+  height: auto;
+  padding: 0;
+  float: left;
+}
+
+.pr {
+  width: 200px;
+}
+
+.del {
+  float: left;
+}
+
+table {
+  border: none;
+}
+
+tr:hover {
+  background-color: #ffa;
+}
+
+#add_new_proj {
+  margin: 0 0 150px 0;
+}
+
+.panel-body-sprint {
+  padding: 0;
+}
+
+.sprint-heading {
+  background-color: #337ab7 !important;
+  color: #fff !important;
+}
+
+.task-heading {
+  background-color: #d9edf7 !important;
+  color: #337ab7 !important;
+}
+
+.panel-task {
+  background-color: #f5f5f5;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
+  border-style: 1px solid transparent;
+  border-color: #ddd;
+}
+
+#div1 {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #eee;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.media-links {
+  text-align: center;
+}
+
+#icon {
+  height: 40%;
+  width: 40%;
+}
+
+.navbar-fixed-bottom {
+  background-color: #111;
+  height: 50px;
+}
+
+@media screen and (max-width: 770px) {
+  .navbar-fixed-bottom {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-text {
+    text-align: center;
+  }
+  .pr {
+    width: 200px;
+  }
+}

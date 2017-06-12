@@ -1,0 +1,123 @@
+<!-- ADD_NEW_MEMBER-->
+<div class="panel panel-default" >
+  <div class="panel-heading"><h5>Add new project</h5></div>
+        <form name="projectList" class="for_all_forms" ng-submit="insertNewProject(projectInfo);" method="POST">
+
+          <div class="form-group">
+              <label for="Name">Title</label>
+              <input type="text"
+                   name="projectName"
+                   class="form-control"
+                   placeholder="IOS Application"
+                   ng-model="projectInfo.title" 
+                   required />
+            </div>
+
+          <!-- ERRORS_TITLE -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="projectList.projectName.$invalid && projectList.projectName.$dirty">Title field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_TITLE -->
+
+          <div class="form-group">
+            <label for="DateRange">Date range</label>
+            <div class="input-group input-daterange">
+              <input type="text" 
+                     name="projectStartDate"
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="projectInfo.start_dt"
+                     required />
+                <div class="input-group-addon">to</div>
+              <input type="text"
+                     name="projectEndDate" 
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="projectInfo.end_dt"
+                     required />
+                </div>
+          </div>
+
+          <!-- ERRORS_START_DATE -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="projectList.projectStartDate.$invalid && projectList.projectStartDate.$dirty">Start Date field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_START_DATE -->
+
+
+          <!-- ERRORS_END_DATE -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="projectList.projectEndDate.$invalid && projectList.projectEndDate.$dirty">End Date field is Empty!</p>
+          </div>
+          <!-- END_END_DATE -->
+
+          <div class="form-group" > <!-- ng-controller="projectManagerController" -->
+            <label for="Progect Manager">Project Manager</label>
+
+            </br>
+
+            <select ng-model="projectInfo.emp_id" required>
+              <option value="">-- Select Project Manager --</option>
+              <option ng-repeat="manager in projectManagers" value="{{manager.id}}">{{manager.name}} {{manager.surname}}</option>
+            </select>
+
+          </div>
+
+
+          <!-- ERRORS_EXECUTOR -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="projectList.projectProjectManager.$invalid && projectList.projectProjectManager.$dirty">Manager field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_EXECUTOR -->
+
+          <div class="form-group">
+            <label for="Progress">Progress</label>
+            <input style="text-align: center;" 
+                 type="text" 
+                 name="projectProgress" 
+                 class="form-control"
+                 placeholder="0%" 
+                 ng-model="projectInfo.progress" 
+                 value="0" 
+                 disabled />
+          </div>
+          
+
+          <!-- ERRORS_PROGRESS -->
+          <div class="form-group">
+            <p class="text-danger" ng-show="projectList.projectProgress.$invalid && projectList.projectProgress.$dirty">Progress field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_PROGRESS -->
+
+
+          <div class="modal-footer form-group">
+            <p align="left" class="advice"><em>To add a new project, please fill in all fields.</em></p>
+            <button class="btn btn-primary" ng-disabled="projectList.$invalid" onclick="new_project()">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+<div class="modal fade bs-example-modal-md" id="new_project" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <img src="../../Project_Manager/images/success.png" alt="success" height="50px" width="50px">
+        <h4>New project successfully added</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="projectInfo = null">Okey</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

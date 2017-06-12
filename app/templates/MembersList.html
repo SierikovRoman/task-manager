@@ -1,0 +1,42 @@
+<!-- Members_Table -->
+<div class="panel panel-default" id="membersList">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h5 class="en hide">MEMBERS</h5><h5 class="ukr">РОБІТНИКИ</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Пошук співробітників..." ng-model="search_query"><!--Search Employee Details Into Database...-->
+      </span>
+    </div>
+	<div class="table-container memberTable">
+      <table class="table table-hover">
+        <tr>
+          <th class="hide">ID</th>
+          <th class="en hide">Name</th>        <th class="ukr">Ім'я</th>
+          <th class="en hide">Surname</th>     <th class="ukr">Прізвище</th>
+          <th class="en hide">Email</th>       <th class="ukr">Email</th>
+          <th class="en hide">Access type</th> <th class="ukr">Доступ</th>
+          <th class="en hide">Position</th>    <th class="ukr">Посада</th>
+          <!-- <th class="en hide">Password</th>    <th class="ukr">Пароль</th> -->
+          <th class="en hide">Edit</th>        <th class="ukr">Редагувати</th>
+          <th class="en hide">Delete</th>      <th class="ukr">Видалити</th>
+        </tr>
+          <tr ng-repeat="member in members | filter:search_query">
+            <td class="hide"><span>{{member.id}}</span></td>
+            <td>{{member.name}}</td>
+            <td>{{member.surname}}</td>     
+            <td>{{member.email}}</td>
+            <td>{{member.access_name}}</td>
+            <td>{{member.pos_name}}</td>
+            <!-- <td>{{member.password}}</td> -->
+            <td>
+              <button class="btn btn-warning" ng-click="editInfo(member)" title="Edit">
+              <span class="glyphicon glyphicon-edit"></span></button>
+            </td>
+            <td>
+              <button class="btn btn-danger" ng-click="deleteInfo(member)" title="Delete">
+              <span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+          </tr>
+        </table>
+      </div>
+  </div>

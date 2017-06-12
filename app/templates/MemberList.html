@@ -1,0 +1,27 @@
+<!-- MEMBER_TABLE -->
+<div class="panel panel-default" id="membersList">
+  <div class="panel-heading"><h5 class="en hide">MEMBERS</h5><h5 class="ukr">РОБІТНИКИ</h5></div>
+    <div class="panel-body">
+      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Пошук співробітників..." ng-model="search_query"><!--Search Employee Details Into Database...-->
+      </span>
+    </div>
+	<div class="table-container memberTable_2">
+    <table class="table table-hover">
+      <tr>
+      <th class="hide">ID</th>
+      <th class="en hide">Name</th>      <th class="ukr">Ім'я</th>
+      <th class="en hide">Surname</th>   <th class="ukr">Прізвище</th>
+      <th class="en hide">Email</th>     <th class="ukr">Email</th>
+      <th class="en hide">Position</th>  <th class="ukr">Посада</th>
+      </tr>
+        <tr ng-repeat="member in members | filter:search_query">
+          <td class="hide"><span>{{member.id}}</span></td>
+          <td>{{member.name}}</td>
+          <td>{{member.surname}}</td>     
+          <td>{{member.email}}</td>
+          <td>{{member.pos_name}}</td>
+        </tr>
+      </table>
+    </div>
+</div>

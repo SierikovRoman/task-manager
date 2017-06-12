@@ -1,0 +1,50 @@
+<div class="panel panel-default" >
+  <div class="panel-heading"><h5 class="en hide">Add new model</h5><h5 class="ukr">НОВА МОДЕЛЬ</h5></div>
+  <form name="Model" class="for_all_forms" ng-submit="insertNewModel(model);" method="POST">
+    <div class="form-group">
+      <label class="en hide" for="Name">Model name:</label>
+      <label class="ukr" for="Name">Ім'я моделі:</label>
+      <input type="text"
+             name="modelName"
+             id="my_new_model" 
+             class="form-control"
+             placeholder="Single"
+             ng-model="model.name" 
+             required />
+    </div>
+
+    <!-- ERRORS_TITLE -->
+    <div class="form-group">
+    <p class="text-danger en hide" ng-show="Model.modelName.$invalid && Model.modelName.$dirty">Model name is Empty!</p>
+    <p class="text-danger ukr" ng-show="Model.modelName.$invalid && Model.modelName.$dirty">Поле назва моделі пусте! Будь-ласка, заповніть поле!</p>
+  </div>
+  <!-- END_ERRORS_TITLE -->
+
+    <div class="modal-footer form-group">
+      <p align="left" class="advice en hide"><em>To add a new model, please fill in field.</em></p>
+      <p align="left" class="advice ukr"><em>Щоб додати нову модель, будь-ласка, заповніть поле ім'я моделі.</em></p>
+      <button class="btn btn-primary en hide" ng-disabled="Model.$invalid" onclick="new_model()">Add</button>
+      <button class="btn btn-primary ukr" ng-disabled="Model.$invalid" onclick="new_model()">Додати</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- SUCCESS_ADDED_NEW_MY_MODEL -->
+
+<div class="modal fade bs-example-modal-md" id="new_model" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <img src="../../Project_Manager/images/success.png" alt="success" height="50px" width="50px">
+        <h4 class="en hide">New model successfully added</h4>
+        <h4 class="ukr">Нова модель успішно додана</h4>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default en hide" data-dismiss="modal" ng-click="model.name = null">Okey</button>
+          <button type="button" class="btn btn-default ukr" data-dismiss="modal" ng-click="model.name = null">Закрити</button>
+        </div>
+    </div>
+  </div>
+</div>

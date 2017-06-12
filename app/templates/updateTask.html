@@ -1,0 +1,154 @@
+<!-- ADD_NEW_TASK-->
+<div class="panel panel-default" id="updateTask" hidden>
+  <div class="panel-heading"><span class="en hide" style="font-weight: bold;">Update task</span><span class="ukr" style="font-weight: bold;">ОНОВИТИ ЗАВДАННЯ</span>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="updateTaskBack()"><span aria-hidden="true">&times;</span></button>
+    </div>
+      <form name="taskList" class="for_all_forms" ng-submit="UpdateTask(currentTask);" method="POST">
+
+          <div class="form-group">
+              <label class="en hide" for="Title">Title</label>
+              <label  class="ukr" for="Title">Назва завдання</label>
+              <input type="text"
+                     name="taskTitle"
+                     class="form-control"
+                     placeholder="IOS Application"
+                     ng-model="currentTask.title"
+                     value="{{currentTask.title}}" 
+                     required />
+            </div>
+
+          <!-- ERRORS_TITLE -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="taskList.taskTitle.$invalid && taskList.taskTitle.$dirty">Title field is Empty!</p>
+            <p class="text-danger ukr" ng-show="taskList.taskTitle.$invalid && taskList.taskTitle.$dirty">Title field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_TITLE -->
+
+          <div class="form-group">
+              <label class="en hide" for="Description">Description</label>
+              <label class="ukr" for="Description">Опис завдання</label>
+              <input type="text" 
+                     name="taskDescription"
+                     class="form-control"
+                     placeholder="Some text"
+                     ng-model="currentTask.description"
+                     value="{{currentTask.description}}" 
+                     required />
+            </div>
+
+          <!-- ERRORS_DESCRIPTION -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="taskList.taskDescription.$invalid && taskList.taskDescription.$dirty">Dedcription field is Empty!</p>
+            <p class="text-danger ukr" ng-show="taskList.taskDescription.$invalid && taskList.taskDescription.$dirty">Поле опису завдання пусте! Будь-ласка, заповніть поле!</p>
+          </div>
+          <!-- END_ERRORS_DESCRIPTION -->
+
+            <div class="form-group">
+            <label class="en hide" for="DateRange">Date range</label>
+            <label class="ukr" for="DateRange">Часовий проміжок</label>
+            <div class="input-group input-daterange">
+              <input type="text" 
+                     name="taskStartDate"
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="currentTask.start_dt"
+                     value="{{currentTask.start_dt}}"
+                     required />
+                <div class="input-group-addon en hide">to</div>
+                <div class="input-group-addon ukr">до</div>
+              <input type="text"
+                     name="taskEndDate" 
+                     class="form-control" 
+                     data-provide="datepicker"
+                     placeholder="2017-12-31"
+                     ng-model="currentTask.end_dt"
+                     value="{{currentTask.end_dt}}"
+                     required />
+                </div>
+          </div>
+
+          <!-- ERRORS_START_DATE -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="taskList.taskStartDate.$invalid && taskList.taskStartDate.$dirty">Start Date field is Empty!</p>
+            <p class="text-danger ukr" ng-show="taskList.taskStartDate.$invalid && taskList.taskStartDate.$dirty">Дата початку завдання не обрана!</p>
+          </div>
+          <!-- END_ERRORS_START_DATE -->
+
+
+          <!-- ERRORS_END_DATE -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="taskList.taskEndDate.$invalid && taskList.taskEndDate.$dirty">End Date field is Empty!</p>
+            <p class="text-danger ukr" ng-show="taskList.taskEndDate.$invalid && taskList.taskEndDate.$dirty">Кінцева дата завдання не обрана!</p>
+          </div>
+          <!-- END_ERRORS_END_DATE -->
+
+          <div class="form-group" >
+            <label class="en hide" for="Progect Manager">Executor</label>
+            <label class="ukr" for="Progect Manager">Виконавець</label>
+
+            </br>
+
+            <select ng-model="currentTask.executor_id">
+            <!-- <option class="en hide" value="">--Select Executor--</option> -->
+            <option class="ukr" value="">--Оберіть виконавця--</option>
+              <option ng-repeat="m_count in memberCount" value="{{m_count.id}}" required>{{m_count.name}} {{m_count.surname}}</option>
+              <option ng-repeat="m_count in memberCount" value="{{m_count.id}}" required>{{m_count.name}} {{m_count.surname}}</option>
+            </select>
+
+          </div>
+
+          <!-- ERRORS_EXECUTOR -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="taskList.projectProjectManager.$invalid && taskList.projectProjectManager.$dirty">Executor field is Empty!</p>
+            <p class="text-danger ukr" ng-show="taskList.projectProjectManager.$invalid && taskList.projectProjectManager.$dirty">Виконавця завдання не обрано!</p>
+          </div>
+          <!-- END_ERRORS_EXECUTOR -->
+
+          <div class="form-group" > 
+            <label class="en hide" for="Progect Manager">Stage</label>
+            <label class="ukr" for="Progect Manager">Stage</label>
+
+            </br>
+
+            <select ng-model="currentTask.stage_id">
+              <!-- <option class="en hide" value="">--Select stage--</option> -->
+              <option class="ukr" value="">--Оберіть етап--</option>
+              <option ng-repeat="st_count in stageCount" value="{{st_count.id}}" required>{{st_count.name}}</option>
+            </select>
+
+          </div>
+
+
+          <!-- ERRORS_STAGE -->
+          <div class="form-group">
+            <p class="text-danger en hide" ng-show="taskList.projectProjectManager.$invalid && taskList.projectProjectManager.$dirty">Stage field is Empty!</p>
+            <p class="text-danger ukr" ng-show="taskList.projectProjectManager.$invalid && taskList.projectProjectManager.$dirty">Етап завдання не обрано!</p>
+          </div>
+          <!-- END_ERRORS_STAGE -->
+
+          <div class="form-group" > 
+            <label class="en hide" for="Progect Manager">Is done:</label>
+            <label class="ukr" for="Progect Manager">Готовність:</label>
+            </br>
+            <input type="checkbox" name="taskStatus" ng-model="currentTask.status" ng-false-value="0">
+
+          </div>
+
+
+          <div class="modal-footer form-group">
+            <p align="left" class="advice en hide"><em>To update info about task, please fill in all fields.</em></p>
+            <p align="left" class="advice ukr"><em>Щоб додати завдання, будь-ласка, заповніть всі поля.</em></p>
+            <button class="btn btn-primary en hide" ng-disabled="taskList.$invalid" ng-click="setUpdateTask(currentTask.id)">Update</button>
+            <button class="btn btn-primary ukr" ng-disabled="taskList.$invalid" ng-click="setUpdateTask(currentTask.id)">Оновити</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+

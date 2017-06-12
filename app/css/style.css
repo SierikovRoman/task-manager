@@ -1,0 +1,77 @@
+.navbar, .logOn, .btn, a {
+  outline: 0 !important;
+}
+
+#name_sys {
+  color: #fff;
+}
+
+.hr {
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.mh {
+  background: #eee;
+  -webkit-border-radius: 5px 5px 0 0;
+          border-radius: 5px 5px 0 0;
+}
+
+.navbar {
+  height: auto;
+}
+
+.navbar-bottom {
+  width: auto;
+}
+
+.c_main {
+  padding: 0;
+  height: auto;
+}
+
+#errors {
+  color: red;
+}
+
+form {
+  margin: 0 auto;
+  margin: 100px 0 100px 0;
+  padding: 30px;
+  background-color: #eee;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+}
+
+.media-links {
+  text-align: center;
+}
+
+#icon {
+  height: 40%;
+  width: 40%;
+}
+
+.navbar-fixed-bottom {
+  background-color: #111;
+  height: 50px;
+}
+
+@media screen and (max-width: 770px) {
+  .navbar-fixed-bottom {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-text {
+    text-align: center;
+  }
+}

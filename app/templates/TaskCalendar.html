@@ -1,0 +1,80 @@
+<!-- Task_Calendar -->
+<div id="calendar"></div>
+
+<div id="dialog" title="My dialog" style="display:none"></div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="title"></h4>
+      </div>
+      <div class="modal-body">
+        <form>
+            <fieldset>
+                <div class="row">
+                    <div class="col-xs-6" align="left">
+                        <label for="start_date">Start date</label>
+                        <p  id="start_date"></p>
+                    </div>
+                    <div class="col-xs-6" align="right">
+                        <label for="end_date">End date</label>
+                        <p id="end_date"></p>
+                    </div>
+                </div>
+
+                <label for="description">Description</label>
+                <h6 id="description"></h6>
+
+                <label for="executor">Executor</label>
+                <h6 id="executor"></h6>
+
+            </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+        
+$('#calendar').fullCalendar({
+     events: '../../Project_Manager/php/taskInfoCalendar.php',
+     error: function() 
+            {
+                alert("error");
+            },
+            success: function()
+            {
+                console.log("successfully loaded");
+            },
+    if () {
+
+    },
+    eventColor: 'blue',    
+    eventTextColor: 'white',
+    utc: true,
+    editable: true,
+    header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+    },
+    eventClick: function (calEvent, jsEvent, view) {
+
+        $("#myModal").modal('show');
+
+        $("#title").text(calEvent.title);
+        $("#start_date").text(calEvent.start);
+        $("#end_date").text(calEvent.end);
+        $("#description").text(calEvent.description);
+        $("#executor").text(calEvent.name + " " + calEvent.surname);
+
+        
+    }
+
+});
+
+
+</script>

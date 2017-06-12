@@ -1,0 +1,32 @@
+<!-- UPDATE_STAGE -->
+<div class="panel panel-default" id="updateStage" hidden>
+  <div class="panel-heading"><span style="font-weight: bold;">Update stage</span>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="updateStageBack()"><span aria-hidden="true">&times;</span></button>
+  </div>  
+        <form name="stageList" class="for_all_forms" ng-submit="updateMyStage(currentStage);" method="POST">
+
+          <div class="form-group">
+              <label for="Model">Stage:</label>
+              <input type="text"
+                     name="stageName"
+                     class="form-control"
+                     placeholder="Single"
+                     ng-model="currentStage.name" 
+                     value="{{currentStage.name}}"
+                     required />
+            </div>
+
+          <!-- ERRORS_MODEL_NAME-->
+          <div class="form-group">
+            <p class="text-danger" ng-show="stageList.stageName.$invalid && stageList.stageName.$dirty">Stage Name field is Empty!</p>
+          </div>
+          <!-- END_ERRORS_MODEL_NAME -->
+
+
+          <div class="modal-footer form-group">
+            <p align="left" class="advice"><em>To update stage, please fill in field.</em></p>
+            <button class="btn btn-primary" ng-disabled="stageList.$invalid" ng-click="setUpdateMyStage(currentStage.id)">Update</button> 
+          </div>
+        </form>
+      </div>
+    </div>
