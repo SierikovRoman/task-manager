@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 	$('#login-form').submit(function(event) {
 		var form = $(this).serialize();
 		$.ajax({
-			url: 'login.php',
+			url: '../../login.php',
 			type: 'POST',
 			dataType: 'html',
 			data: form,
