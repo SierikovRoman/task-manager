@@ -19,6 +19,7 @@
   <script src="app/libs/bootstrap/dist/js/bootstrap.js"></script>
   <script src="app/libs/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js"></script>
   <script src="app/js/administrator.js"></script>
+  <script>$.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = true; });</script>
 
 
 </head>
