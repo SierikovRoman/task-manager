@@ -7,11 +7,11 @@
 		$routeProvider
 
 		.when('/', {
-			templateUrl: '../../Project_Manager/templates/MembersList.html'
+			templateUrl: '../templates/MembersList.html'
 		})
 
 		.when('/MemberList', {
-			templateUrl: '../../Project_Manager/templates/MembersList.html'
+			templateUrl: '../templates/MembersList.html'
 		})
 		
 		.when('/AddNewMember', {
