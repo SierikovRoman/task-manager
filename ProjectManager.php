@@ -9,19 +9,19 @@ session_start();
   <script>document.write('<base href="' + document.location + '" />');</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="libs/fullcalendar-3.3.1/fullcalendar.min.css">
-  <link rel="stylesheet" type="text/css" href="libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
-  <link rel="stylesheet" type="text/css" href="css/test.css">
+  <link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="app/libs/fullcalendar-3.3.1/fullcalendar.min.css">
+  <link rel="stylesheet" type="text/css" href="app/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
+  <link rel="stylesheet" type="text/css" href="app/css/test.css">
 
-  <script src="libs/jquery/dist/jquery.js"></script>
-  <script src="libs/moment/min/moment.min.js"></script>
-  <script src="libs/fullcalendar-3.3.1/fullcalendar.js"></script>
-  <script src="libs/angular/angular.min.js"></script>
+  <script src="app/libs/jquery/dist/jquery.js"></script>
+  <script src="app/libs/moment/min/moment.min.js"></script>
+  <script src="app/libs/fullcalendar-3.3.1/fullcalendar.js"></script>
+  <script src="app/libs/angular/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-  <script src="libs/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="libs/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js"></script>
-  <script src="js/project_manager.js"></script>
+  <script src="app/libs/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="app/libs/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js"></script>
+  <script src="app/js/project_manager.js"></script>
 
 </head>
 <body>
@@ -29,7 +29,7 @@ session_start();
 		<div class="row">
 			<div class="col-lg-2 col-mg-2 col-sm-2 hidden-xs block-left">
 				<div class="userPhoto">
-					<img src="images/1.jpg" alt="projectManager" class="img-responsive img-circle">
+					<img src="app/images/1.jpg" alt="projectManager" class="img-responsive img-circle">
 				</div>
 				<div class="links">
 					<ul class="nav nav-pills nav-stacked" style="font-size: 8pt;">
@@ -119,19 +119,19 @@ session_start();
 			<div class="col-lg-10 col-mg-10 col-sm-10 col-xs-12 block-right">
 				
 				<!-- Navigation_start -->
-        <nav ng-include src="'templates/navigationMenuProjectManager.html'"></nav>
+        <nav ng-include src="'app/templates/navigationMenuProjectManager.html'"></nav>
 				<!-- Navigation_end -->
 
 				<!-- Main_start -->
 				<div class="main-container">
 
-          <div ng-include src="'templates/updateProjectModel.html'"></div>
+          <div ng-include src="'app/templates/updateProjectModel.html'"></div>
 
-          <div ng-include src="'templates/updateTask.html'"></div> 
+          <div ng-include src="'app/templates/updateTask.html'"></div> 
 
-          <div ng-include src="'templates/updateMyModel.html'"></div>  
+          <div ng-include src="'app/templates/updateMyModel.html'"></div>  
 
-          <div ng-include src="'templates/updateMyStage.html'"></div>
+          <div ng-include src="'app/templates/updateMyStage.html'"></div>
 
           <ng-view></ng-view>
         
@@ -144,7 +144,7 @@ session_start();
 
 
 <!-- LOG_OUT -->
-<div ng-include src="'templates/logOut.html'"></div>
+<div ng-include src="'app/templates/logOut.html'"></div>
 
 
 </body>

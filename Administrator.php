@@ -6,19 +6,19 @@
   <script>document.write('<base href="' + document.location + '" />');</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="libs/fullcalendar-3.3.1/fullcalendar.min.css">
-  <link rel="stylesheet" type="text/css" href="libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
-  <link rel="stylesheet" type="text/css" href="css/test.css">
+  <link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="app/libs/fullcalendar-3.3.1/fullcalendar.min.css">
+  <link rel="stylesheet" type="text/css" href="app/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
+  <link rel="stylesheet" type="text/css" href="app/css/test.css">
 
-  <script src="libs/jquery/dist/jquery.js"></script>
-  <script src="libs/moment/min/moment.min.js"></script>
-  <script src="libs/fullcalendar-3.3.1/fullcalendar.js"></script>
-  <script src="libs/angular/angular.min.js"></script>
+  <script src="app/libs/jquery/dist/jquery.js"></script>
+  <script src="app/libs/moment/min/moment.min.js"></script>
+  <script src="app/libs/fullcalendar-3.3.1/fullcalendar.js"></script>
+  <script src="app/libs/angular/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-  <script src="libs/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="libs/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js"></script>
-  <script src="js/administrator.js"></script>
+  <script src="app/libs/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="app/libs/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js"></script>
+  <script src="app/js/administrator.js"></script>
 
 
 </head>
@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="col-lg-2 col-mg-2 col-sm-2 hidden-xs block-left">
 				<div class="userPhoto">
-					<img src="images/1.jpg" alt="romek" class="img-responsive img-circle">
+					<img src="app/images/1.jpg" alt="romek" class="img-responsive img-circle">
 				</div>
 				<div class="links">
 					<ul class="nav nav-pills nav-stacked">
@@ -97,17 +97,17 @@
 			<div class="col-lg-10 col-mg-10 col-sm-10 col-xs-12 block-right">
 				
 				<!-- Navigation_start -->
-        <nav ng-include src="'templates/navigationMenuAdmin.html'"></nav>
+        <nav ng-include src="'app/templates/navigationMenuAdmin.html'"></nav>
 				<!-- Navigation_end -->
 
 				<!-- Main_start -->
 				<div class="main-container">
 
-          <div ng-include src="'templates/updateMember.html'"></div>
+          <div ng-include src="'app/templates/updateMember.html'"></div>
 
-          <div ng-include src="'templates/updatePosition.html'"></div>
+          <div ng-include src="'app/templates/updatePosition.html'"></div>
 
-          <div ng-include src="'templates/updateProject.html'"></div>
+          <div ng-include src="'app/templates/updateProject.html'"></div>
 
           <ng-view></ng-view>
         
@@ -120,7 +120,7 @@
 
 
 <!-- LOG_OUT -->
-<div ng-include src="'templates/logOut.html'"></div>
+<div ng-include src="'app/templates/logOut.html'"></div>
 
 
 </body>
