@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="../app/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../app/css/login.css">
 
-    <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/login.js"></script>
+    <script src="../app/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../app/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../app/js/login.js"></script>
 
     <title>LOG IN</title>
 </head>
