@@ -15,35 +15,35 @@
 		})
 		
 		.when('/AddNewMember', {
-			templateUrl: '../../Project_Manager/templates/addNewMember.html'
+			templateUrl: '../templates/addNewMember.html'
 		})
 
 		.when('/Positions', {
-			templateUrl: '../../Project_Manager/templates/PositionsList.html'
+			templateUrl: '../templates/PositionsList.html'
 		})
 
 		.when('/AddNewPosition', {
-			templateUrl: '../../Project_Manager/templates/addNewPosition.html'
+			templateUrl: '../templates/addNewPosition.html'
 		})
 
 		.when('/Projects', {
-			templateUrl: '../../Project_Manager/templates/ProjectsList.html'
+			templateUrl: '../templates/ProjectsList.html'
 		})
 
 		.when('/AddNewProject', {
-			templateUrl: '../../Project_Manager/templates/addNewProject.html'
+			templateUrl: '../templates/addNewProject.html'
 		})
 
 		.when('/ProjectCalendar', {
-			templateUrl: '../../Project_Manager/templates/ProjectsCalendar.html'
+			templateUrl: '../templates/ProjectsCalendar.html'
 		})
 
 		.when('/SaveReport', {
-			templateUrl: '../../Project_Manager/templates/AdminReportSave.html'
+			templateUrl: '../templates/AdminReportSave.html'
 		})
 
 		.when('/MakeReport', {
-			templateUrl: '../../Project_Manager/templates/AdminReport.html'
+			templateUrl: '../templates/AdminReport.html'
 		});
 
 	});
@@ -56,7 +56,7 @@
 
 	getLanguage();
 	function getLanguage(){
-		$http.post('../../Project_Manager/php/getLanguage.php').success(function(data){
+		$http.post('../php/getLanguage.php').success(function(data){
 			if(data == 'en'){
 				$('.ukr').addClass('hide');
 				$('.en').removeClass('hide');
@@ -69,7 +69,7 @@
 
 	getInfo();
 		function getInfo(){ 
-			$http.post('../../Project_Manager/php/empDetails.php').success(function(data){
+			$http.post('../php/empDetails.php').success(function(data){
 				console.log("Member list downloaded");
 				$scope.members = data;
 			});
@@ -77,7 +77,7 @@
 
 	getPosID();
 	function getPosID(){
-		$http.post('../../Project_Manager/php/memberPositionDetails.php').success(function(data){
+		$http.post('../php/memberPositionDetails.php').success(function(data){
 			console.log("Member Position list downloaded");
 			$scope.posCount = data;
 		});
@@ -85,7 +85,7 @@
 
 	getAccessType();
 	function getAccessType(){
-		$http.post('../../Project_Manager/php/memberAccessTypeDetails.php').success(function(data){
+		$http.post('../php/memberAccessTypeDetails.php').success(function(data){
 			console.log("Access type list downloaded");
 			$scope.accessCount = data;
 		});
@@ -93,7 +93,7 @@
 
 	// Insert New member to db
 	$scope.insertNewMember = function(info){
-		$http.post('../../Project_Manager/php/insertMember.php',{
+		$http.post('../php/insertMember.php',{
 
 			"name":info.name,
 			"surname":info.surname,
@@ -118,7 +118,7 @@
 
 	// Delete member from db
 	$scope.deleteInfo = function(info){
-		$http.post('../../Project_Manager/php/deleteDetails.php',{
+		$http.post('../php/deleteDetails.php',{
 
 			"del_id":info.id
 
@@ -139,7 +139,7 @@
 
 	$scope.UpdateInfo = function(info){
 		console.log("Updated");
-		$http.post('../../Project_Manager/php/updateDetails.php',{
+		$http.post('../php/updateDetails.php',{
 
 			"id":info.id,
 			"name":info.name,
@@ -178,7 +178,7 @@
 	//============ POSITION ==============
 
 	$scope.insertNewPosition = function(info){
-		$http.post('../../Project_Manager/php/insertPosition.php',{
+		$http.post('../php/insertPosition.php',{
 
 			"pos_name":info.pos_name
 
@@ -199,7 +199,7 @@
 
 	$scope.UpdatePosition = function(info){
 		//console.log("Updated");
-		$http.post('../../Project_Manager/php/updatePosition.php',{
+		$http.post('../php/updatePosition.php',{
 
 			"id":info.id,
 			"pos_name":info.pos_name
@@ -228,7 +228,7 @@
 	}
 
 	$scope.deletePosition = function(info){
-		$http.post('../../Project_Manager/php/deletePosition.php',{
+		$http.post('../php/deletePosition.php',{
 
 			"del_id":info.id
 
@@ -248,7 +248,7 @@
 
 	getInfoProj();
 	function getInfoProj(){
-		$http.post('../../Project_Manager/php/projDetails.php').success(function(data){
+		$http.post('../php/projDetails.php').success(function(data){
 			console.log("Project list downloaded & updated"); 
 			$scope.projects = data;
 			
@@ -262,7 +262,7 @@
 
 	getID();
 	function getID(){
-		$http.post('../../Project_Manager/php/freeProjectManagerDetails.php').success(function(data){
+		$http.post('../php/freeProjectManagerDetails.php').success(function(data){
 			console.log("Project Manager list downloaded");
 			$scope.projectManagers = data;
 		});
@@ -270,7 +270,7 @@
 
 	// Insert New project to db
 	$scope.insertNewProject = function(info){
-		$http.post('../../Project_Manager/php/insertProject.php',{
+		$http.post('../php/insertProject.php',{
 
 			"title":info.title,
 			"start_dt":info.start_dt,
@@ -287,7 +287,7 @@
 
 	// Delete project from db
 	$scope.deleteInfoProject = function(info){
-		$http.post('../../Project_Manager/php/deleteProject.php',{
+		$http.post('../php/deleteProject.php',{
 
 			"id":info.id
 
@@ -305,7 +305,7 @@
 		$scope.currentProject = info;
 		$('#projectList').slideUp();
 		$('#updateProject').slideToggle();
-		$http.post('../../Project_Manager/php/projectManagerDetails.php', {
+		$http.post('../php/projectManagerDetails.php', {
 
 			"id":info.id
 
@@ -316,7 +316,7 @@
 	};
 
 	$scope.UpdateProject = function(info){
-		$http.post('../../Project_Manager/php/updateProjectDetails.php',{
+		$http.post('../php/updateProjectDetails.php',{
 
 			"id":info.id,
 			"title":info.title,
@@ -365,7 +365,7 @@
 	$scope.choosenProject = {};
 	$scope.choosenTasks = {};
 	$scope.getProjectInfo = function(info){
-		$http.post('../../Project_Manager/php/getProjectInfo.php',{
+		$http.post('../php/getProjectInfo.php',{
 
 			"project_id":info.project_id
 
@@ -376,7 +376,7 @@
 				$scope.choosenProject = data;
 			};
 		});
-		$http.post('../../Project_Manager/php/getProjectTaskInfo.php',{
+		$http.post('../php/getProjectTaskInfo.php',{
 
 			"project_id":info.project_id
 
@@ -437,7 +437,7 @@
 	};
 
 	$scope.chooseLang = function(){
-		$http.post('../../Project_Manager/php/chooseLang.php').success(function(data){
+		$http.post('../php/chooseLang.php').success(function(data){
 			if(data == 'en'){
 				$('.ukr').addClass('hide');
 				$('.en').removeClass('hide');
