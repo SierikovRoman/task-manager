@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="app/libs/fullcalendar-3.3.1/fullcalendar.min.css">
+  <link rel="stylesheet" type="text/css" href="app/libs/fullcalendar-3.3.1/fullcalendar.css">
   <link rel="stylesheet" type="text/css" href="app/libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
   <link rel="stylesheet" type="text/css" href="app/css/test.css">
 
@@ -15,7 +15,7 @@
   <script src="app/libs/moment/min/moment.min.js"></script>
   <script src="app/libs/fullcalendar-3.3.1/fullcalendar.js"></script>
   <script src="app/libs/angular/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="app/libs/angular/angular-route.min.js"></script>
   <script src="app/libs/bootstrap/dist/js/bootstrap.js"></script>
   <script src="app/libs/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.js"></script>
   <script src="app/js/administrator.js"></script>
@@ -23,7 +23,7 @@
 
 
 </head>
-<body>
+<body ng-cloak>
 	<div class="container-fluid" ng-controller="DbController">
 		<div class="row">
 			<div class="col-lg-2 col-mg-2 col-sm-2 hidden-xs block-left">
