@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'app/php/database_connections.php';
+include 'php/database_connections.php';
 $email= $_POST['email'];
 $password=$_POST['password'];
 
